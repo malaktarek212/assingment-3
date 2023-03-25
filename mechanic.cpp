@@ -28,3 +28,16 @@ public:
     return true;
   }
 };
+template <typename T> class WorkshopQueue {
+private:
+  queue<T> customers;
+
+public:
+  void addCustomer(T c) { customers.push(c); }
+  T getNextCustomer() {
+    T c = customers.front();
+    customers.pop();
+    return c;
+  }
+  bool isEmpty() const { return customers.empty(); }
+};
