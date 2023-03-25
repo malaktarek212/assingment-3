@@ -1,3 +1,4 @@
+#include "person.h"
 class Person {
 protected:
   string name;
