@@ -24,3 +24,8 @@ public:
     cout << "Name: " << name << ", ID: " << id << ", Age: " << age;
   }
 };
+
+struct Appointment {
+  int min;
+  int hours;
+};
