@@ -100,10 +100,10 @@ public:
   }
   int getCounter() const { return counter; }
   void setCounter(int counter1) { counter = counter1; }
-  bool isAvailable(Appointment appointment1) const {
+  bool isAvailable(Appointment appointment1, Appointment appointment2) const {
     for (Appointment app : appointments) {
-      if (appointment1.hours == appointment1.hours &&
-          appointment1.min == appointment1.min) {
+      if (appointment1.hours == appointment2.hours &&
+          appointment1.min == appointment2.min) {
         return false;
       }
     }
@@ -123,3 +123,9 @@ public:
   }
   bool isEmpty() const { return customers.empty(); }
 };
+
+int main()
+{
+  return 0;
+}
+
