@@ -1,6 +1,8 @@
 #ifndef MECHANIC_H
 #define MECHANIC_H
 
+#include "person.h"
+
 #include <string>
 class Mechanic : public Person {
 private:
