@@ -4,21 +4,33 @@
 #include <string>
 #include "Mechanic.h"
 
-class Mechanic : public Person {
+class Customer : public Person {
 private:
-  int counter;
-  Appointment appointments[10]; // Array of struct Appointment
+  int MechanicID;
+  Appointment appointment;
 
 public:
-  Mechanic() {}
-  Mechanic(string name1, int id1, int age1, int counter1,
-           Appointment appointments1[])
-      : Person(name, id, age), counter(counter1) {
+  Customer(string name1, int id1, int age1, int MechanicID1,
+           Appointment appointment1) {
+   
   }
-  int getCounter() const { }
-  void setCounter(int counter1) {  }
-  bool isAvailable(Appointment appointment1, Appointment appointment2) const {
-    
 
+  int get_MechanicID() const {  }
+  void set_MechanicID(int MechanicID1) {  }
+  Appointment get_appointment() const {  }
+  void set_appointment(Appointment appointment1) {
+  }
+
+  bool operator<(const Customer &m) const {
+    
+  }
+  bool operator>(const Customer &m) const {
+    
+  }
+  bool operator==(const Customer &m) const {
+   
+  }
+  void printInfo() const {
+  }
 };
 
