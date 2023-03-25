@@ -1,30 +1,50 @@
 #include "Customer.h"
 #include <iostream>
 
-class Mechanic : public Person {
+class Customer : public Person {
 private:
-  int counter;
-  Appointment appointments[10]; // Array of struct Appointment
+  int MechanicID;
+  Appointment appointment;
 
 public:
-  Mechanic() {}
-  Mechanic(string name1, int id1, int age1, int counter1,
-           Appointment appointments1[])
-      : Person(name, id, age), counter(counter1) {
-    counter = counter1;
-    for (int i = 0; i < counter; i++) {
-      appointments[i] = appointments1[i];
-    }
+  Customer(string name1, int id1, int age1, int MechanicID1,
+           Appointment appointment1) {
+    MechanicID = MechanicID1;
+    appointment = appointment1;
   }
-  int getCounter() const { return counter; }
-  void setCounter(int counter1) { counter = counter1; }
-  bool isAvailable(Appointment appointment1, Appointment appointment2) const {
-    for (Appointment app : appointments) {
-      if (appointment1.hours == appointment2.hours &&
-          appointment1.min == appointment2.min) {
-        return false;
-      }
-    }
-    return true;
+
+  int get_MechanicID() const { return MechanicID; }
+  void set_MechanicID(int MechanicID1) { MechanicID = MechanicID1; }
+  Appointment get_appointment() const { return appointment; }
+  void set_appointment(Appointment appointment1) {
+    appointment = appointment1;
+  }
+
+  bool operator<(const Customer &m) const {
+    if (appointment.hours < m.appointment.hours)
+      return true;
+    else if (appointment.hours == m.appointment.hours &&
+             appointment.min < m.appointment.min)
+      return true;
+    else
+      return false;
+  }
+  bool operator>(const Customer &m) const {
+    if (appointment.hours > m.appointment.hours)
+      return true;
+    else if (appointment.hours == m.appointment.hours &&
+             appointment.min > m.appointment.min)
+      return true;
+    else
+      return false;
+  }
+  bool operator==(const Customer &m) const {
+    return appointment.hours == m.appointment.hours &&
+           appointment.min == m.appointment.min;
+  }
+  void printInfo() const {
+    cout << "Mechanic ID: " << MechanicID << endl;
+    cout << "Appointment: " << appointment.hours << ":" << appointment.min
+         << endl;
   }
 };
