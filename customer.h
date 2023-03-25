@@ -2,7 +2,8 @@
 #define CUSTOMER_H
 
 #include <string>
-#include "Mechanic.h"
+#include "mechanic.h"
+#include "person.h"
 
 class Customer : public Person {
 private:
