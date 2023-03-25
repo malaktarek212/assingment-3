@@ -1,4 +1,5 @@
-#include "cutomer.h"
+#include "Customer.h"
+#include <iostream>
 
 class Mechanic : public Person {
 private:
